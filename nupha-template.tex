@@ -164,7 +164,7 @@
 \address{Department of Physics, Duke University, Durham, NC 27708-0305}
 
 \begin{abstract}
-We study the effects of nucleon substructure on bulk observables in proton-lead collisions at the LHC using Bayesian methodology. Substructure is added to the \trento\ parametric initial condition model using Gaussian nucleons with a variable number of Gaussian partons. We vary the number and width of these partons while recovering the desired inelastic proton-proton cross section and ensemble averaged proton density. We then run the model through a large number of minimum bias hydrodynamic simulations and measure the response of final particle production and azimuthal particle correlations to initial state properties. Once these response functions are determined, we calibrate free parameters of the model using established Bayesian methodology. We comment of the implied viability of our partonic model and implications for hydrodynamic behavior in small systems.
+We study the effects of nucleon substructure on bulk observables in proton-lead collisions at the LHC using Bayesian methodology. Substructure is added to the \trento\ parametric initial condition model using Gaussian nucleons with a variable number of Gaussian partons. We vary the number and width of these partons while recovering the desired inelastic proton-proton cross section and ensemble averaged proton density. We then run the model through a large number of minimum bias hydrodynamic simulations and measure the response of final particle production and azimuthal particle correlations to initial state properties. Once these response functions are determined, we calibrate free parameters of the model using established Bayesian methodology. We comment on the implied viability of the partonic model for describing hydrodynamic behavior in small systems.
 \end{abstract}
 
 \begin{keyword}
@@ -186,7 +186,7 @@ We study the effects of nucleon substructure on bulk observables in proton-lead 
 %% main text
 \section{Introduction}
 
-Recent measurements of azimuthal particle correlations in small collision systems show striking simularities to flow signatures observed in gold-gold and lead-lead collisions, leading many to question if the origin of small system correlations is hydrodynamic in nature.
+Recent measurements of azimuthal particle correlations in small collision systems show striking similarities to flow signatures observed in gold-gold and lead-lead collisions, leading many to question if the origin of small system correlations is hydrodynamic in nature.
 A key difficulty in assessing the model-to-data consistency of hydrodynamic models in light-light and light-heavy collisions is theoretical uncertainty in the QGP initial conditions.
 In this work, we use established Bayesian methodology \cite{Higdon:2008cmc} to parametrize and constrain the QGP initial conditions in small collision systems in order to infer initial state properties with reduced bias.
 
@@ -257,22 +257,6 @@ We reparametrize it using a structure parameter
   \chi = v_\mathrm{min} + \chi\, (v_\mathrm{max} - v_\mathrm{min}), 
 \end{equation}
 where the minimum parton width $v_\mathrm{min}=\sqrt{A_\mathrm{min}/N_\mathrm{partons}}$ with $A_\mathrm{min}=0.09 ~\mathrm{fm}^2$ is chosen to always permit a configuration which satisfies the inelastic p+p cross section, and the maximum allowable parton width is capped at $v_\mathrm{max} = w$ the nucleon width.
-%The ranges of the sampled model parameters are shown in Tbl.~\ref{ranges}.
-%
-%\begin{wraptable}{r}{0.6\textwidth}
-%  \begin{tabular}{lll}
-%    Parameter & Description & Range \\
-%    \paddedhline
-%    $p$    & Entropy deposition parameter & $-1$ to $+1$ \\
-%    $\sigma_\mathrm{fluct}$ & nucleon fluctuation std dev & 0--2 \\
-%    $\log_2(N_\mathrm{partons}$) & Parton number (log space) & 0--4.5 \\
-%    $w$    & Nucleon width & 0.4--1 fm \\
-%    $\chi$ & Nucleon structure & 0--1
-%  \end{tabular}
-%  \caption{
-%    \label{ranges} Input parameter ranges for the initial condition model.
-%  }
-%\end{wraptable}
 
 We then run the \trento\ initial condition model with partonic substructure and calculate the initial entropy density $s$ and eccentricity harmonics $\e_2$ and $\e_3$ for a large number of minimum bias events using the parameter values at each design point.
 A Gaussian process emulator is trained to interpolate these quantities as a function of the input parameters.
@@ -294,7 +278,7 @@ The resulting posterior distribution is visualized in Fig.~\ref{fig:posterior} w
 We note that the initial condition normalization, which is not shown in Fig.~\ref{fig:posterior}, is fixed to reproduce average particle production across the centrality range.
 
 Several interesting features emerge from the calibrated posterior.
-First, the entropy deposition parameter $p$ is unconstrained by the proton-lead data alone and accepts scaling behavior ranging from a wounded-nucleon model $p=1$ to models with strong saturation effects described by $p \ll 0$.
+First, the entropy deposition parameter $p$, which is highly constrained by Pb+Pb data \cite{Bernhard:2016tnd}, is unconstrained by the proton-lead data alone and accepts scaling behavior ranging from a wounded-nucleon model $p=1$ to models with strong saturation effects described by $p < 0$.
 Similarly, the nucleon width $w$ is unconstrained by the present analysis, although it does require rather specific values for the nucleon fluctuation standard deviation $\sigma_\mathrm{fluct}$.
 We also observe a moderate preference for a large number of partons $N_\mathrm{part} \gtrsim 10$ near the upper end of our design range with a preferred parton width roughly equal to one-half the specified nucleon width.
 The performance of the calibrated model is illustrated in Fig.~\ref{fig:observables} which shows emulator predictions plotted against ALICE experimental data \cite{Abelev:2014mda} using parameter values sampled from the Bayesian posterior.
@@ -314,6 +298,8 @@ Bayesian parameter estimation is then used to constrain free parameters of the m
 Our results indicate a moderate preference for a parton-like description of the nucleon, although we cannot yet exclude a partonless wounded-nucleon model based on proton-lead data alone.
 Natural targets for improvement to the present analysis include an expanded design range, more rigorous emulator training and validation, and simultaneous calibration to proton-lead and lead-lead systems.
 We leave these refinements to future work.
+
+This work was supported by the U.S.\ DOE Grants No.\ DE-FC52-08NA28752 and DE-FG02-05ER41367 and NSF Grant No.\ NSF-ACI-1550225. CPU time was provided by the Open Science Grid, supported by the DOE and NSF. 
 
 %% References
 %%
