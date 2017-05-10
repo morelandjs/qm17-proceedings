@@ -65,7 +65,7 @@ FUNCTION {init.urlbst.variables}
   "http://dx.doi.org/" 'doiurl := % prefix to make URL from DOI
   "doi:" 'doiprefix :=      % text prefix printed before DOI ref
   #1 'addeprints :=         % 0=no eprints; 1=include eprints
-  #1 'adddoiresolver :=     % 0=no DOI resolver; 1=include it
+  #0 'adddoiresolver :=     % 0=no DOI resolver; 1=include it
   #2 'hrefform :=           % 0=no crossrefs; 1=hypertex xrefs; 2=hyperref refs
   #1 'inlinelinks :=        % 0=URLs explicit; 1=URLs attached to titles
   % the following are internal state variables, not config constants

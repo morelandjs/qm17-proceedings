@@ -151,8 +151,8 @@
 
 %% Instructions from Editor: Please use the following \dochead only in the preprint version (e-print arXiv etc.); 
 %% use empty \dochead{} when submitting to Nuclear Physics A!
-\dochead{XXVIth International Conference on Ultrarelativistic Nucleus-Nucleus Collisions\\ (Quark Matter 2017)}
-%\dochead{}
+%%\dochead{XXVIth International Conference on Ultrarelativistic Nucleus-Nucleus Collisions\\ (Quark Matter 2017)}
+\dochead{}
 %% Use \dochead if there is an article header, e.g. \dochead{Short communication}
 %% \dochead can also be used to include a conference title, if directed by the editors
 %% e.g. \dochead{17th International Conference on Dynamical Processes in Excited States of Solids}
@@ -227,7 +227,7 @@ The new proton thickness function $T_p$ becomes
 \begin{equation}
   T_p(\mathbf{x}) = \gamma_i \sum\limits_{i=1}^{N_\mathrm{partons}} \frac{1}{2 \pi v^2} \exp\left[{-}\frac{(\mathbf{x} - \mathbf{x}_i)^2}{2 v^2}\right],
 \end{equation}
-where $N_\mathrm{partons}$ is the number of partons, $v$ is their width, and $\mathbf{x}_i$ the parton positions which are sampled from the deconvolved radial distribution $r_\mathrm{parton} = \sqrt{w^2 - v^2}$.
+where $N_\mathrm{partons}$ is the number of partons, $v$ is their width, and $\mathbf{x}_i$ the partons' positions which are sampled from a Gaussian distribution of width $r_\mathrm{parton} = \sqrt{w^2 - v^2}$.
 The factor $\gamma_i$ is a Gamma random weight factor as before.
 Once the nucleon width, parton number, and parton width are specified, we apply Eq.~\eqref{collision_criteria} to each pair of partons and flag each corresponding nucleon as a participant if one or more of its partons collide.
 If any parton in a given nucleon participates, \emph{all} partons in that nucleon contribute to the participant thickness function.
@@ -254,7 +254,7 @@ We first sample $n=240$ unique parameter configurations using a space filling al
 The parton width cannot be larger than the nucleon width and hence requires special attention.
 We reparametrize it using a structure parameter 
 \begin{equation}
-  \chi = v_\mathrm{min} + \chi\, (v_\mathrm{max} - v_\mathrm{min}), 
+  v = v_\mathrm{min} + \chi\, (v_\mathrm{max} - v_\mathrm{min}), 
 \end{equation}
 where the minimum parton width $v_\mathrm{min}=\sqrt{A_\mathrm{min}/N_\mathrm{partons}}$ with $A_\mathrm{min}=0.09 ~\mathrm{fm}^2$ is chosen to always permit a configuration which satisfies the inelastic p+p cross section, and the maximum allowable parton width is capped at $v_\mathrm{max} = w$ the nucleon width.
 
@@ -267,6 +267,7 @@ We then measure the yield and flow response functions
 \begin{align}
   \label{response}
   N_\mathrm{ch}(|\eta| < 1) = f(dS/dy), \\
+  \label{hydro_response}
   \frac{\vn}{\en} = g\left(\frac{N_\mathrm{ch}(|\eta| < 1)}{A_0}\right),
 \end{align}
 where $v_n$ is the anisotropic flow coefficient, $\varepsilon_n$ the corresponding eccentricity harmonic, and $A_0$ is the transverse area of the entropy profile, measured by counting the cells above 1\% of the peak entropy density. 
@@ -283,6 +284,7 @@ Similarly, the nucleon width $w$ is unconstrained by the present analysis, altho
 We also observe a moderate preference for a large number of partons $N_\mathrm{part} \gtrsim 10$ near the upper end of our design range with a preferred parton width roughly equal to one-half the specified nucleon width.
 The performance of the calibrated model is illustrated in Fig.~\ref{fig:observables} which shows emulator predictions plotted against ALICE experimental data \cite{Abelev:2014mda} using parameter values sampled from the Bayesian posterior.
 Our calibrated model provides a good description of the charged particle yield and flow cumulants as a function of collision centrality, although we somewhat overshoot the gap of $v_2$ and $v_3$ measured by experiment.
+This tension may arise from limitations of the hydrodynamic response scaling in Eq.~\eqref{hydro_response} and merits further investigation.
 \begin{figure}
   \centering
   \includegraphics{observables_samples}
@@ -294,9 +296,9 @@ Our calibrated model provides a good description of the charged particle yield a
 
 \section{Summary}
 We construct a simple multi-parton description of QGP initial conditions for small collision systems using a variable number of partons and predetermined parton width.
-Bayesian parameter estimation is then used to constrain free parameters of the model and identify regions of parameter space which are most consistent with experimental data.
+Bayesian parameter estimation is then used to constrain free parameters of the model.
 Our results indicate a moderate preference for a parton-like description of the nucleon, although we cannot yet exclude a partonless wounded-nucleon model based on proton-lead data alone.
-Natural targets for improvement to the present analysis include an expanded design range, more rigorous emulator training and validation, and simultaneous calibration to proton-lead and lead-lead systems.
+Natural targets for improvement to the present analysis include an expanded design range, more rigorous emulator training and validation, simultaneous calibration to proton-lead and lead-lead systems, and replacing our response functions with model calculations at each design point.
 We leave these refinements to future work.
 
 This work was supported by the U.S.\ DOE Grants No.\ DE-FC52-08NA28752 and DE-FG02-05ER41367 and NSF Grant No.\ NSF-ACI-1550225. CPU time was provided by the Open Science Grid, supported by the DOE and NSF. 

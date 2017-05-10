@@ -1,0 +1,24 @@
+Responses to specific concerns,
+
+> Please clarify what is the deconvolved radial distribution r_parton = \sqrt{w^2-v^2}. It is said parton distributions are sampled from this, but r_parton is not a distribution but just a constant.
+
+This is the width of a Gaussian distribution. I've corrected the relevant text.
+
+
+> I believe Eq. (4) is wrong and it should read $\nu$ on the LHS.
+
+Thanks for catching this. The typo has been fixed.
+
+
+> I am surprised that despite the fitting to N_ch and v_n and the amount of free parameters, that the v_n's are not well described with the best parameter set. Can the authors comment why they think this is the case? The difference between v_2 and v_3 should just be determined by initial eccentricities.
+
+The hydrodynamic response functions are a fast approximation to running viscous hydrodynamics at every design point (tens of thousands of times). In this work, we measure a single set of response functions for the full parameter design. This implicitly assumes that the hydro response is uniform for different initial condition parameters. For example it predicts the same flow from a wounded nucleon model (with no quarks) as a saturated IC model with three quarks when the two models predict the same eccentricities and transverse areas. This is an admittedly crude assumption which should be improved. We are currently working on calibrating the model using full hybrid model calculations at each design point. Space is naturally limited, but I've added a sentence alerting the reader to the limitations of the hydrodynamic response functions used to calibrate the model.
+
+
+> Using a definition of A_0 measuring relative to the peak entropy density may lead to an overestimation of sizes of events with low peak entropy density compared to ones with larger values. The authors may want to see what happens if they use a fixed minimum entropy density to define A_0.
+
+I completely agree. Better yet, it should be removed entirely and the full hybrid model should be evaluated at each design and matched faithfully to experiment. We are working on this now.
+
+> I am assuming that in the future (Npartons) will be increased to not have the peak right at the edge of the considered range.
+
+We hope to push the max parton number to N=50 or perhaps even a bit higher. The code has practical limit N_max=100, where numerically solving the cross section opacity parameter becomes computationally burdensome. I suspect, however, that improving the model calibration, as dicussed previously, could alleviate the preference for a large number of partons and resolve the issue indirectly.
